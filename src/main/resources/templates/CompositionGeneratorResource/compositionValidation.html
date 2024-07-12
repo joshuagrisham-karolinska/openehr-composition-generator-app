@@ -1,0 +1,61 @@
+<form id="compositionValidation">
+
+  <div class="row">
+
+    <div class="col">
+
+      <div class="mb-3">
+        <label for="compositionValidationTemplate" class="form-label">Template</label>
+        <textarea form="compositionValidation" name="template" id="compositionValidationTemplate" class="form-control" rows="15"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="compositionValidationComposition" class="form-label">Composition</label>
+        <textarea form="compositionValidation" name="composition" id="compositionValidationComposition" class="form-control" rows="15"></textarea>
+      </div>
+
+      <div class="form-floating mb-3">
+        <select form="compositionValidation" name="format" id="compositionValidationFormat" class="form-select">
+          <option value="XML">Canonical XML</option>
+          <option value="JSON">Canonical JSON</option>
+          <option value="FLAT_JSON">Simple Flat JSON</option>
+          <option value="STRUCTURED_JSON">Simple Structured JSON</option>
+        </select>
+        <label for="compositionValidationFormat" class="form-label">Composition Format</label>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+    <hr />
+    <button form="compositionValidation" type="button" class="btn btn-primary m-2"
+      hx-post="/composition/validate"
+      hx-include="#compositionValidation"
+      hx-trigger="click"
+      hx-target="#compositionValidationResults"
+      hx-swap="innerHTML"
+      hx-on::response-error="displayError(event, 'compositionValidationResults')"
+      onclick="displayLoading('detailsCompositionValidationResults', 'compositionValidationResults')"
+    >
+        Validate
+    </button>
+  </div>
+
+  <div>
+    <hr />
+    <button form="compositionValidation" type="button" class="btn btn-primary m-2"
+      hx-post="/composition"
+      hx-include="#compositionValidation"
+      hx-trigger="click"
+      hx-target="#convertedComposition"
+      hx-swap="innerHTML"
+      hx-on::response-error="displayError(event, 'convertedComposition')"
+      onclick="displayLoading('detailsConvertedComposition', 'convertedComposition')"
+    >
+        Convert Composition to other formats
+    </button>
+  </div>
+
+</form>

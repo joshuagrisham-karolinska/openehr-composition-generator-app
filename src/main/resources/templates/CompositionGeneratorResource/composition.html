@@ -1,0 +1,65 @@
+{@com.github.joshuagrisham.openehr.CompositionConverter converter}
+<div class="row">
+  <div class="col">
+    <details class="m-2">
+      <summary>
+        Canonical XML
+      </summary>
+      <div class="p-3 bg-secondary-subtle">
+        <pre><code id="xml">{converter.getCompositionAsString('XML')}</code></pre>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <details class="m-2">
+      <summary>
+        Canonical XML 2
+      </summary>
+      <div class="p-3 bg-secondary-subtle">
+        <pre><code id="xml">{converter.prettyPrintCompositionXml}</code></pre>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <details class="m-2">
+      <summary>
+        Canonical JSON
+      </summary>
+      <div class="p-3 bg-secondary-subtle">
+        <pre><code id="json">{converter.getCompositionAsString('JSON')}</code></pre>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <details class="m-2">
+      <summary>
+        Simple Flat JSON
+      </summary>
+      <div class="p-3 bg-secondary-subtle">
+        <pre><code id="flatjson">{converter.getCompositionAsString('FLAT_JSON')}</code></pre>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <details class="m-2">
+      <summary>
+        Simple Structured JSON
+      </summary>
+      <div class="p-3 bg-secondary-subtle">
+        <pre><code id="structuredjson">{converter.getCompositionAsString('STRUCTURED_JSON')}</code></pre>
+      </div>
+    </details>
+  </div>
+</div>

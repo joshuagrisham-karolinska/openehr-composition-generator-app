@@ -1,0 +1,49 @@
+<form id="templateForm">
+
+  <div class="row">
+    <div class="col">
+
+      <div class="mb-3">
+        <label for="templateText" class="form-label">Template</label>
+        <textarea form="templateForm" name="template" id="templateText" class="form-control" rows="15"></textarea>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input form="templateForm" type="text" name="rowsLimit" id="rowsLimit" class="form-control" value="10" />
+        <label for="rowsLimit" class="form-label">Some option TBD</label>
+        <div id="rowsLimitHelp" class="form-text">Some kind of TBD option ??</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div>
+    <hr />
+    <button form="templateForm" type="button" class="btn btn-primary m-2"
+      hx-post="/template"
+      hx-trigger="click"
+      hx-target="#webTemplate"
+      hx-swap="innerHTML"
+      hx-on::response-error="displayError(event, 'webTemplate')"
+      onclick="displayLoading('detailsWebTemplate', 'webTemplate')"
+    >
+        Parse and Convert OPT to Web Template
+    </button>
+  </div>
+
+  <div>
+    <hr />
+    <button form="templateForm" type="button" class="btn btn-primary m-2"
+      hx-post="/composition/generate"
+      hx-trigger="click"
+      hx-target="#composition"
+      hx-swap="innerHTML"
+      hx-on::response-error="displayError(event, 'composition')"
+      onclick="displayLoading('detailsComposition', 'composition')"
+    >
+        Generate Example Composition
+    </button>
+  </div>
+
+</form>

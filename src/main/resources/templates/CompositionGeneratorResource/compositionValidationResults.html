@@ -1,0 +1,27 @@
+{#if violations.size == 0}
+<div class="alert alert-success" role="alert">
+  The Composition is valid!
+</div>
+{#else}
+<div class="alert alert-danger" role="alert">
+  Found {violations.size} constraint violiation(s).
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">AQL Path</th>
+      <th scope="col">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#for violation in violations}
+    <tr>
+      <th scope="row">{violation_count}</th>
+      <td>{violation.aqlPath}</td>
+      <td>{violation.message}</td>
+    </tr>
+    {/for}
+  </tbody>
+</table>
+{/if}
