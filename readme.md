@@ -19,3 +19,11 @@ mvn clean compile quarkus:dev
 mvn clean package
 docker run --rm -p 8080:8080 ${USER}/composition-generator-app:1.0-SNAPSHOT
 ```
+
+## License
+
+See [LICENSE](./LICENSE) for more details.
+
+## Acknowledgements
+
+* Originally created by [Joshua Grisham](https://github.com/joshuagrisham).
